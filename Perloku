@@ -1,3 +1,3 @@
 #!/bin/sh
-morbo script/asi_pool -l http://*:$PORT
+./local/bin/morbo script/asi_pool -l http://*:$PORT
 
