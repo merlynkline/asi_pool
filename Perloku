@@ -1,3 +1,4 @@
 #!/bin/sh
+echo "MORBO: $(ls -l ./vendor/perl-deps/bin/morbo script/asi_pool)"
 ./vendor/perl-deps/bin/morbo script/asi_pool -l http://*:$PORT
 
