@@ -1,4 +1,3 @@
 #!/bin/sh
-echo "FIND: $(find . -name morbo)"
-vendor/perl/bin/morbo script/asi_pool -l http://*:$PORT
+./vendor/perl-deps/bin/morbo script/asi_pool -l http://*:$PORT
 
