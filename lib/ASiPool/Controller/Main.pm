@@ -36,7 +36,7 @@ sub tweets {
         consumer_secret => $ENV{TWITTER_PRIVATE},
     );
 
-warn "A";
+warn "A:$ENV{TWITTER_PUBLIC},$ENV{TWITTER_PRIVATE}";
     $nt->request_access_token;
 warn "B";
     my $r = $nt->search($topic);
