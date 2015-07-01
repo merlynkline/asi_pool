@@ -1,6 +1,4 @@
 #!/bin/sh
-echo "PWD: $(pwd)"
-echo "LS2: $(ls vendor/perl/lib)"
-echo "LS3: $(ls vendor)"
+echo "FIND: $(find . -name morbo)"
 vendor/perl/bin/morbo script/asi_pool -l http://*:$PORT
 
