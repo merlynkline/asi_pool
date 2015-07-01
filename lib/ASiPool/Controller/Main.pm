@@ -36,11 +36,8 @@ sub tweets {
         consumer_secret => $ENV{TWITTER_PRIVATE},
     );
 
-warn "A:$ENV{TWITTER_PUBLIC},$ENV{TWITTER_PRIVATE}";
     $nt->request_access_token;
-warn "B";
     my $r = $nt->search($topic);
-warn "C";
 
     my @res;
     foreach my $status (@{$r->{statuses}}) {
@@ -52,7 +49,6 @@ warn "C";
         };
     }
 
-warn "D";
     $c->render(json => \@res);
 }
 
