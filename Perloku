@@ -1,5 +1,6 @@
 #!/bin/sh
-echo "VP: $VENDORED_PERL"
-ls "$VENDORED_PERL"
+pwd
+ls vendor/perl
+ls vendor/perl/bin
 /app/vendor/perl/bin/morbo script/asi_pool -l http://*:$PORT
 
