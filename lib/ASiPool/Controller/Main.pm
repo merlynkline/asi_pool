@@ -24,5 +24,33 @@ sub _get_article_text {
     }
 }
 
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+use Net::Twitter;
+sub tweets {
+    my $c = shift;
+
+    my $topic = $c->stash('topic');
+    my $nt = Net::Twitter->new(
+        traits          => [ qw/AppAuth API::RESTv1_1/ ],
+        consumer_key    => $ENV{TWITTER_PUBLIC},
+        consumer_secret => $ENV{TWITTER_PRIVATE},
+    );
+
+    $nt->request_access_token;
+    my $r = $nt->search($topic);
+
+    my @res;
+    foreach my $status (@{$r->{statuses}}) {
+        push @res, {
+            screen_name => $status->{user}->{screen_name},
+            date        => $status->{created_at},
+            id          => $status->{id},
+            text        => $status->{text},
+        };
+    }
+
+    $c->render(json => \@res);
+}
+
 1;
 

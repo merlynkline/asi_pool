@@ -16,6 +16,7 @@ sub startup {
 
   my $v1 = $r->under('/v1');
   $v1->get('article/:topic')->to('main#article');
+  $v1->get('tweets/:topic')->to('main#tweets');
 }
 
 1;
