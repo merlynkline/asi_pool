@@ -13,6 +13,9 @@ sub startup {
 
   # Normal route to controller
   $r->get('/')->to('example#welcome');
+
+  my $v1 = $r->under('/v1');
+  $v1->get('article/:topic')->to('main#article');
 }
 
 1;
