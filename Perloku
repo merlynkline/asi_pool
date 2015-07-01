@@ -1,6 +1,6 @@
 #!/bin/sh
 echo "PWD: $(pwd)"
-echo "LS1: $(ls vendor/perl)"
-echo "LS2: $(ls vendor/perl/bin)"
+echo "LS2: $(ls vendor/perl/lib)"
+echo "LS3: $(ls vendor)"
 vendor/perl/bin/morbo script/asi_pool -l http://*:$PORT
 
