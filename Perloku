@@ -1,4 +1,6 @@
 #!/bin/sh
-echo "MORBO: $(ls -l ./vendor/perl-deps/bin/morbo script/asi_pool)"
+echo "PWD: $(pwd)"
+echo "FIND: $(find . -name morbo)"
+echo "MORBO: $(ls -l ./vendor/perl-deps/bin/morbo)"
 ./vendor/perl-deps/bin/morbo script/asi_pool -l http://*:$PORT
 
